@@ -1,0 +1,131 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.navbar {
+  position: fixed;
+  top: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 90%;
+  max-width: 1200px;
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border-radius: 50px;
+  padding: 0.8rem 2rem;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  z-index: 1000;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.navbar-left .logo {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: #333;
+  text-decoration: none;
+  letter-spacing: -0.5px;
+  transition: color 0.3s ease;
+}
+
+.navbar-left .logo:hover {
+  color: #007bff;
+}
+
+.navbar-center .nav-links {
+  display: flex;
+  gap: 2rem;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.nav-links li a {
+  text-decoration: none;
+  color: #555;
+  font-weight: 500;
+  font-size: 1rem;
+  padding: 0.5rem 1rem;
+  border-radius: 30px;
+  transition: all 0.3s ease;
+  position: relative;
+}
+
+.nav-links li a:hover {
+  color: #007bff;
+  background: rgba(0, 123, 255, 0.1);
+}
+
+/* Effet de soulignement animé */
+.nav-links li a::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 0;
+  height: 2px;
+  background: #007bff;
+  transition: width 0.3s ease;
+}
+
+.nav-links li a:hover::after {
+  width: 70%;
+}
+
+/* Style actif pour le lien courant */
+.nav-links li a.active {
+  color: #007bff;
+  background: rgba(0, 123, 255, 0.1);
+}
+
+.nav-links li a.active::after {
+  width: 70%;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  .navbar {
+    width: 95%;
+    padding: 0.8rem 1rem;
+    border-radius: 30px;
+  }
+
+  .navbar-left .logo {
+    font-size: 1.2rem;
+  }
+
+  .navbar-center .nav-links {
+    gap: 0.5rem;
+  }
+
+  .nav-links li a {
+    padding: 0.4rem 0.8rem;
+    font-size: 0.9rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .navbar {
+    top: 10px;
+  }
+
+  .navbar-center .nav-links {
+    gap: 0.2rem;
+  }
+
+  .nav-links li a {
+    padding: 0.3rem 0.6rem;
+    font-size: 0.8rem;
+  }
+}
+
+/* Ajoutez ceci à votre fichier App.css ou global.css pour éviter que le contenu ne soit caché derrière la navbar fixe */
+body {
+  padding-top: 100px; /* Ajustez selon la hauteur de votre navbar */
+}
