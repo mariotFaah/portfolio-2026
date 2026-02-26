@@ -1,0 +1,39 @@
+.home-container {
+  width: 100%;
+}
+
+/* HERO SECTION */
+#accueil {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+#accueil h1 {
+  font-size: 3rem;
+  color: #38bdf8;
+}
+
+#accueil p {
+  max-width: 600px;
+  margin-bottom: 30px;
+  font-size: 1.1rem;
+  color: #cbd5e1;
+}
+
+.button-group {
+  display: flex;
+  gap: 20px;
+}
+
+.button-group button:first-child {
+  background: #38bdf8;
+  color: black;
+}
+
+.button-group button:last-child {
+  background: transparent;
+  border: 2px solid #38bdf8;
+  color: #38bdf8;
+}

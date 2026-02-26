@@ -1,0 +1,8 @@
+.about-container {
+  max-width: 800px;
+}
+
+.about-container p {
+  font-size: 1.1rem;
+  color: #cbd5e1;
+}

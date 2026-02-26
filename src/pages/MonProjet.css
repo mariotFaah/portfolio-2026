@@ -1,0 +1,43 @@
+.projet-container {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+
+.projet1,
+.projet2 {
+  background: #1e293b;
+  padding: 30px;
+  border-radius: 15px;
+  transition: 0.3s;
+}
+
+.projet1:hover,
+.projet2:hover {
+  transform: translateY(-5px);
+}
+
+.projet1 img,
+.projet2 img {
+  width: 100%;
+  max-width: 400px;
+  margin: 15px 0;
+  border-radius: 10px;
+}
+
+.projet1 ul,
+.projet2 ul {
+  display: flex;
+  gap: 15px;
+  list-style: none;
+  margin-top: 10px;
+}
+
+.projet1 li,
+.projet2 li {
+  background: #38bdf8;
+  color: black;
+  padding: 5px 10px;
+  border-radius: 6px;
+  font-size: 0.9rem;
+}

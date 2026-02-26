@@ -1,10 +1,11 @@
-
+import "./MonProjet.css"
 
 const MonProjet = () => {
   return (
     <div>
      
-      <div>
+      <div className="projet-container">
+
         <h1>Mes Projets</h1>
           <div className="projet1">
             <h2> Application de gestion de commande</h2>
