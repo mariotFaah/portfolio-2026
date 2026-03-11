@@ -1,9 +1,12 @@
 import emailjs from '@emailjs/browser';
-import { useRef, type FormEvent } from 'react';
+import { useRef, useState, type FormEvent } from 'react';
 import './Contact.css';
+import Modal from '../components/Modal';
 
 const Contact = () => {
   const form = useRef<HTMLFormElement>(null);
+  const [isSuccessOpen, setIsSuccessOpen] = useState(false);
+  const [successMessage, setSuccessMessage] = useState("");
 
   const sendEmail = (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
@@ -17,14 +20,16 @@ const Contact = () => {
           import.meta.env.VITE_REACT_APP_PUBLIC_KEY
         )
         .then(
-          (result) => {
-            alert('Message envoyé avec succès !');
-            console.log(result.text);
+          () => {
+            setSuccessMessage(
+              "Merci pour votre message, je vous répondrai dans les plus brefs délais."
+            );
+            setIsSuccessOpen(true);
             form.current?.reset();
           },
-          (error) => {
-            console.log(error.text);
-            alert("Erreur lors de l'envoi du message. Veuillez réessayer.");
+          () => {
+            // Tu peux aussi faire un modal d’erreur si tu veux
+            alert("Une erreur est survenue. Veuillez réessayer plus tard.");
           }
         );
     }
@@ -81,6 +86,12 @@ const Contact = () => {
               Envoyer le message
             </button>
           </form>
+           <Modal
+              open={isSuccessOpen}
+              title="Message envoyé"
+              message={successMessage}
+              onClose={() => setIsSuccessOpen(false)}
+            />
 
           <div className="contact-info">
             <h2>Informations</h2>
