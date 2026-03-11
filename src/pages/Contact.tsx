@@ -89,8 +89,8 @@ const Contact = () => {
               ou des collaborations à distance.
             </p>
             <ul>
-              <li>Email&nbsp;: <span>votre.email@example.com</span></li>
-              <li>Ville&nbsp;: <span>Antananarivo, Madagascar</span></li>
+              <li>Email&nbsp;: <span>mariotfanantenana@gmail.com</span></li>
+              <li>Ville&nbsp;: <span> Madagascar</span></li>
             </ul>
             {/* Tu pourras ajouter ici tes liens LinkedIn / GitHub plus tard */}
           </div>
