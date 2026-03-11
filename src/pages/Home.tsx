@@ -6,7 +6,7 @@ import Contact from "./Contact";
 import "./Home.css";
 
 const Home = () => {
-  const scrollToSection = (id) => {
+  const scrollToSection = (id:string) => {
     const section = document.getElementById(id);
     if (section) {
       section.scrollIntoView({ behavior: "smooth" });
